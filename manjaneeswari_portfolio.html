@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manjaneeswari A | Portfolio</title>
+
+  <!-- Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #17345f;
+      --dark: #102746;
+      --blue: #2878d8;
+      --light-blue: #eef6ff;
+      --border: #d9e8f7;
+      --text: #29415f;
+      --muted: #6f8197;
+      --white: #ffffff;
+      --shadow: 0 8px 28px rgba(23, 52, 95, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--dark);
+      box-shadow: 0 3px 18px rgba(0,0,0,.12);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 19px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #8ec5ff;
+      margin-right: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      color: #eaf4ff;
+      padding: 7px 10px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 500;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      background: #28507f;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #f5faff 0%, #e9f4ff 100%);
+      padding: 80px 24px 70px;
+    }
+
+    .hero-container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .eyebrow {
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 5px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(38px, 6vw, 58px);
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    .hero h2 {
+      color: var(--navy);
+      font-size: 20px;
+      margin: 14px 0;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 25px 0 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--blue);
+      font-size: 13px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: var(--blue);
+    }
+
+    .btn-secondary {
+      color: var(--blue);
+      background: #fff;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .socials {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .socials a:hover {
+      color: var(--blue);
+    }
+
+    .profile-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-circle {
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      background: #dceeff;
+      border: 8px solid #fff;
+      box-shadow: 0 12px 35px rgba(35, 101, 170, .16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      text-align: center;
+      padding: 35px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 65px 24px;
+    }
+
+    .section:nth-child(even) {
+      background: #f8fbff;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 30px;
+    }
+
+    .section-title p {
+      margin: 7px auto 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .about-text {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .education-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .internship-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cert-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 23px;
+      box-shadow: var(--shadow);
+      transition: .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 17px;
+      line-height: 1.4;
+      margin: 0 0 8px;
+    }
+
+    .card h4 {
+      color: var(--blue);
+      margin: 15px 0 4px;
+      font-size: 13px;
+    }
+
+    .card p, .card li {
+      font-size: 12.5px;
+      color: var(--text);
+    }
+
+    .muted {
+      color: var(--muted) !important;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 9px;
+      border-radius: 20px;
+      background: var(--light-blue);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .skill-card {
+      text-align: center;
+    }
+
+    .skill-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--light-blue);
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .project-number {
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+      font-size: 15px;
+    }
+
+    .project-card strong {
+      color: var(--navy);
+    }
+
+    .semester-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 12px;
+    }
+
+    .semester-table td {
+      padding: 5px 0;
+      border-bottom: 1px solid #e8f0f8;
+    }
+
+    .semester-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .cert-card {
+      padding: 18px;
+    }
+
+    .cert-card h3 {
+      font-size: 13px;
+    }
+
+    .cert-card p {
+      margin: 4px 0;
+      font-size: 11px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .interest-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .interest-list li {
+      margin: 5px 0;
+      font-size: 13px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .contact-item {
+      margin: 14px 0;
+      font-size: 13px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .contact-item a {
+      color: var(--blue);
+      word-break: break-word;
+    }
+
+    form {
+      background: #fff;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid #cddfed;
+      border-radius: 7px;
+      padding: 11px 12px;
+      margin-bottom: 15px;
+      font: inherit;
+      font-size: 12px;
+      outline: none;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--blue);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      border: 0;
+      border-radius: 7px;
+      padding: 11px 20px;
+      background: var(--blue);
+      color: #fff;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #dce9f7;
+      text-align: center;
+      padding: 25px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 950px) {
+      .hero-container,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        order: -1;
+      }
+
+      .education-grid,
+      .skills-grid,
+      .project-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      .hero-container {
+        gap: 35px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .profile-circle {
+        width: 210px;
+        height: 210px;
+      }
+
+      .education-grid,
+      .skills-grid,
+      .project-grid,
+      .internship-grid,
+      .cert-grid,
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 48px 18px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+        padding: 5px 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a class="logo" href="#home"><span>&lt;/&gt;</span> Manjaneeswari A</a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#internships">Internships</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-container">
+      <div>
+        <div class="eyebrow">Hi, I'm</div>
+        <h1>Manjaneeswari A</h1>
+        <h2>Information Science and Engineering Student</h2>
+        <p>
+          Final-year Information Science and Engineering student interested in software development,
+          UI/UX design, machine learning and web technologies. I enjoy building practical projects
+          and continuously improving my technical skills.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="#projects">View My Projects</a>
+          <a class="btn btn-secondary" href="#contact">Download Resume</a>
+        </div>
+
+        <div class="socials">
+          <a href="https://github.com/manjaneeswari30" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/manjaneeswari-a-b09150435" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-circle">Manjaneeswari A<br>Information Science<br>&amp; Engineering</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="about">
+    <div class="section-title">
+      <h2>About Me</h2>
+    </div>
+    <p class="about-text">
+      Final-year Information Science and Engineering student with interests in software development,
+      UI/UX design, Python, machine learning and web technologies. Interested in developing practical
+      solutions and improving technical skills through projects, internships and certifications.
+    </p>
+  </section>
+
+  <section class="section" id="education">
+    <div class="section-title">
+      <h2>Education</h2>
+    </div>
+
+    <div class="grid education-grid">
+      <div class="card">
+        <h3>10th Standard</h3>
+        <p>State Board</p>
+        <p class="muted">2021</p>
+        <span class="tag">All Pass</span>
+      </div>
+
+      <div class="card">
+        <h3>12th Standard</h3>
+        <p>State Board</p>
+        <p class="muted">2023</p>
+        <span class="tag">84%</span>
+      </div>
+
+      <div class="card">
+        <h3>B.Tech Information Science and Engineering</h3>
+        <p>Women's Engineering College, Puducherry</p>
+        <span class="tag">Overall CGPA: 8.72</span>
+
+        <table class="semester-table">
+          <tr><td>Semester 1</td><td>7.9</td></tr>
+          <tr><td>Semester 2</td><td>7.7</td></tr>
+          <tr><td>Semester 3</td><td>8.0</td></tr>
+          <tr><td>Semester 4</td><td>8.5</td></tr>
+          <tr><td>Semester 5</td><td>9.1</td></tr>
+          <tr><td>Semester 6</td><td>9.2</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="section-title">
+      <h2>Technical Skills</h2>
+    </div>
+
+    <div class="grid skills-grid">
+      <div class="card skill-card">
+        <div class="skill-icon">&lt;/&gt;</div>
+        <h3>Programming</h3>
+        <p>Python, C, Java</p>
+      </div>
+
+      <div class="card skill-card">
+        <div class="skill-icon">⚙</div>
+        <h3>Tools</h3>
+        <p>Figma, Visual Studio Code, Jupyter Notebook, XAMPP, GitHub</p>
+      </div>
+
+      <div class="card skill-card">
+        <div class="skill-icon">DB</div>
+        <h3>Databases</h3>
+        <p>MySQL, SQL</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="section-title">
+      <h2>Projects</h2>
+      <p>Selected academic and practical projects</p>
+    </div>
+
+    <div class="grid project-grid">
+
+      <div class="card project-card">
+        <div class="project-number">1</div>
+        <h3>Plagiarism Key Detection</h3>
+        <p>
+          Plagiarism Key Detection helps to find copied content in a document or text by comparing
+          text content.
+        </p>
+        <p><strong>Technologies:</strong> Python, Plagiarism Detection Algorithm, Text Comparison</p>
+        <p><strong>Role:</strong> Developed and tested the plagiarism detection system.</p>
+      </div>
+
+      <div class="card project-card">
+        <div class="project-number">2</div>
+        <h3>Veloura Bakes – UI/UX Mobile E-Commerce Application</h3>
+        <p>
+          Veloura Bakes is a mobile bakery e-commerce UI/UX application designed using Figma.
+          It provides a simple and user-friendly shopping experience for bakery products.
+        </p>
+        <p><strong>Technologies:</strong> Figma, UI/UX Design, Interactive Prototype, Google Fonts (Poppins), GitHub</p>
+        <p><strong>Role:</strong> Designed the Veloura Bakes mobile e-commerce application, created UI screens
+          and reusable components, and developed the interactive prototype in Figma.</p>
+        <p><strong>GitHub:</strong>
+          <a href="https://github.com/manjaneeswari30" target="_blank" rel="noopener">manjaneeswari30 ↗</a>
+        </p>
+      </div>
+
+      <div class="card project-card">
+        <div class="project-number">3</div>
+        <h3>Spectral-Spatial Patch Processing in Hyperspectral Images Using CNN and Vision Transformer Fusion</h3>
+        <p>
+          A deep learning method that combines CNN and Vision Transformer to extract and classify
+          spectral-spatial features from hyperspectral image patches.
+        </p>
+        <p><strong>Technologies:</strong> Python, TensorFlow/Keras, CNN, Vision Transformer (ViT), NumPy, OpenCV</p>
+        <p><strong>Role:</strong> Developed the CNN–Vision Transformer fusion model, processed hyperspectral
+          image patches, and evaluated classification performance.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="internships">
+    <div class="section-title">
+      <h2>Internships</h2>
+    </div>
+
+    <div class="grid internship-grid">
+
+      <div class="card">
+        <h3>National Institute of Technology Tiruchirappalli (NIT Trichy)</h3>
+        <h4>Full-Time Internship – Hyperspectral Image Processing</h4>
+        <p><strong>Project:</strong> Spectral-Spatial Patch Processing in Hyperspectral Images Using CNN and Vision Transformer Fusion</p>
+        <p><strong>Department:</strong> Department of Computer Applications</p>
+        <p><strong>Duration:</strong> 16/06/2025 – 13/07/2025</p>
+        <p><strong>Description:</strong> Successfully completed a full-time internship at NIT Trichy focused on
+          hyperspectral image processing using CNN and Vision Transformer techniques.</p>
+      </div>
+
+      <div class="card">
+        <h3>Alfrin Technologies, Pondicherry</h3>
+        <h4>Full Stack Development Internship</h4>
+        <p><strong>Duration:</strong> 15 Days</p>
+        <p><strong>Period:</strong> 15/06/2026 – 01/07/2026</p>
+        <p><strong>Mode:</strong> Offline</p>
+        <p><strong>Description:</strong> Completed a Full Stack internship involving practical sessions,
+          live projects and assessments covering core Full Stack concepts.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="certifications">
+    <div class="section-title">
+      <h2>Certifications</h2>
+    </div>
+
+    <div class="grid cert-grid">
+
+      <div class="card cert-card">
+        <h3>Computer Science MetaBootcamp: Beginner to Intermediate 2026</h3>
+        <p>Udemy</p>
+        <p>7 hours</p>
+        <p>September 2026</p>
+      </div>
+
+      <div class="card cert-card">
+        <h3>Hands-On Python Machine Learning with Real World Projects</h3>
+        <p>Udemy</p>
+        <p>4.5 hours</p>
+        <p>September 2026</p>
+      </div>
+
+      <div class="card cert-card">
+        <h3>Developing Soft Skills and Personality</h3>
+        <p>NPTEL</p>
+        <p>8 Weeks</p>
+        <p>October 2025</p>
+      </div>
+
+      <div class="card cert-card">
+        <h3>Designing Logo, Vector Arts, Icons, Packing &amp; QR with AI</h3>
+        <p>Udemy</p>
+        <p>3 hours</p>
+        <p>January 2026</p>
+      </div>
+
+      <div class="card cert-card">
+        <h3>Python Project: Build a PDF File Handling Tool from Scratch</h3>
+        <p>Udemy</p>
+        <p>1 hour</p>
+        <p>February 2025</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="achievements">
+    <div class="section-title">
+      <h2>Achievements &amp; Interests</h2>
+    </div>
+
+    <div class="two-column">
+
+      <div class="card">
+        <h3>Achievements</h3>
+        <h4>Election Booth Volunteer</h4>
+        <p>Assisted and volunteered at an election booth.</p>
+
+        <h4>NSS Volunteer</h4>
+        <p>
+          Participated in NSS activities at Annai Sivagami GGH School, contributing to social service
+          and community activities.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Areas of Interest</h3>
+        <ul class="interest-list">
+          <li>Web Development</li>
+          <li>Data Science / Analytics</li>
+          <li>Core Programming</li>
+          <li>UI/UX Design</li>
+          <li>Machine Learning</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>Get in touch</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="card">
+        <h3>Contact Details</h3>
+
+        <div class="contact-item">
+          <strong>Email</strong>
+          <a href="mailto:Manjaneeswari2006@gmail.com">Manjaneeswari2006@gmail.com</a>
+        </div>
+
+        <div class="contact-item">
+          <strong>Phone</strong>
+          <a href="tel:8124225576">8124225576</a>
+        </div>
+
+        <div class="contact-item">
+          <strong>GitHub</strong>
+          <a href="https://github.com/manjaneeswari30" target="_blank" rel="noopener">
+            github.com/manjaneeswari30 ↗
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>LinkedIn</strong>
+          <a href="https://www.linkedin.com/in/manjaneeswari-a-b09150435" target="_blank" rel="noopener">
+            linkedin.com/in/manjaneeswari-a-b09150435 ↗
+          </a>
+        </div>
+      </div>
+
+      <form action="#" method="post">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name">
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Your email">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your message"></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Manjaneeswari A. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
